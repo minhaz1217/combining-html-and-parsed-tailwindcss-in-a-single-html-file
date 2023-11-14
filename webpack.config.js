@@ -13,12 +13,7 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
     new HtmlWebpackPlugin({ template: "./src/index.html", inject: false }),
-    new HTMLInlineCSSWebpackPlugin({
-      replace: {
-        target: '<link rel="stylesheet" href="./output.css" />',
-        removeTarget: true,
-      },
-    }),
+    new HTMLInlineCSSWebpackPlugin(),
   ],
   module: {
     rules: [
