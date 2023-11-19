@@ -1,4 +1,15 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link href="output.css" rel="stylesheet"/><title>Combining HTML and Parsed Tailwindcss in a single file</title><style type="text/css">/* @tailwind base; */
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet" />
+    <title>Combining HTML and Parsed Tailwindcss in a single file</title>
+  <script defer src="main.js"></script><style type="text/css">/*!******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/output.css ***!
+  \******************************************************************/
+/* @tailwind base; */
 
 .mt-12 {
   margin-top: 3rem
@@ -50,4 +61,16 @@
   color: rgb(239 68 68 / var(--tw-text-opacity))
 }
 
-</style></head><body class="bg-gray-800"><div class="text-center mt-12 bg-green-100 p-24"><h1 class="text-4xl text-red-500 font-bold">Change any tailwindcss in the html file and watch it recompile</h1><p class="text-xl text-black mt-4">The src/output.css should have the only used css classes from tailwind</p></div></body></html>
+</style></head>
+  <body class="bg-gray-800">
+    <div class="text-center mt-12 bg-green-100 p-24">
+      <h1 class="text-4xl text-red-500 font-bold">
+        Change any tailwindcss in the html file and watch it recompile
+      </h1>
+      <p class="text-xl text-black mt-4">
+        The src/output.css should have the only used css classes from tailwind
+      </p>
+      <p>Minhaz</p>
+    </div>
+  </body>
+</html>
