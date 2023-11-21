@@ -8,6 +8,7 @@
     <title>Combining HTML and Parsed Tailwindcss in a single file</title>
   </head>
   <body class="bg-gray-800">
+    <% var translation=htmlWebpackPlugin.options.translations; %>
     <div class="text-center mt-12 bg-green-100 p-24">
       <h1 class="text-4xl text-red-500 font-bold">
         Change any tailwindcss in the html file and watch it recompile
@@ -15,7 +16,7 @@
       <p class="text-xl text-black mt-4">
         The src/output.css should have the only used css classes from tailwind
       </p>
-      <p><%= htmlWebpackPlugin.options.translations.name %></p>
+      <p><%= translation.name %></p>
     </div>
   </body>
 </html>
