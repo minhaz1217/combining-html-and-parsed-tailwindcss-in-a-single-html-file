@@ -17,7 +17,7 @@ module.exports = {
       template: "./src/index.html",
       inject: true,
       translations: {
-        name: translation.name,
+        ...translation,
       },
     }),
     new HTMLInlineCSSWebpackPlugin(),
