@@ -7,6 +7,7 @@ const translation = require("./translations/en.json");
 module.exports = (env) => {
   console.log(env);
   console.log(process.argv);
+  console.log(process.env);
   return {
     // mode: "production",
     mode: "development",

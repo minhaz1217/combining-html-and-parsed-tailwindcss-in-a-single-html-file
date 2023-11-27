@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --env=tr=english",
+    "build": "webpack",
     "start": "serve src",
     "tailwind-dev": "tailwindcss -i ./src/tailwind.css -o ./src/output.css --watch",
     "live-server-dev": "live-server --port=3001 src",
