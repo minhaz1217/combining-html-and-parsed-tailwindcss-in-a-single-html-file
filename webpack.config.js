@@ -5,9 +5,7 @@ const HTMLInlineCSSWebpackPlugin =
 const translation = require("./translations/en.json");
 
 module.exports = (env) => {
-  console.log(env);
-  console.log(process.argv);
-  console.log(process.env);
+  console.log(process.env.npm_config_language);
   return {
     // mode: "production",
     mode: "development",
@@ -22,7 +20,7 @@ module.exports = (env) => {
         inject: true,
         translations: {
           ...translation,
-          env2: env.tr,
+          language: process.env.npm_config_language || "german",
         },
       }),
       new HTMLInlineCSSWebpackPlugin(),
