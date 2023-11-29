@@ -2,10 +2,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HTMLInlineCSSWebpackPlugin =
   require("html-inline-css-webpack-plugin").default;
-const translation = require("./translations/en.json");
-
-module.exports = (env) => {
-  console.log(process.env.npm_config_language);
+  
+  module.exports = (env) => {
+  const translation = require(`./translations/${process.env.npm_config_language_file}.json`);
+  // console.log(process.env.npm_config_language);
   return {
     // mode: "production",
     mode: "development",
@@ -20,7 +20,7 @@ module.exports = (env) => {
         inject: true,
         translations: {
           ...translation,
-          language: process.env.npm_config_language || "german",
+          language_file: process.env.npm_config_language_file || "german",
         },
       }),
       new HTMLInlineCSSWebpackPlugin(),
