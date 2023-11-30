@@ -2,10 +2,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HTMLInlineCSSWebpackPlugin =
   require("html-inline-css-webpack-plugin").default;
-  
-  module.exports = (env) => {
-  const translation = require(`./translations/${process.env.npm_config_language_file}.json`);
-  // console.log(process.env.npm_config_language);
+
+module.exports = (env) => {
+  const languageFile = process.env.npm_config_language_file || "en";
+  const translation = require(`./translations/${languageFile}.json`);
   return {
     // mode: "production",
     mode: "development",
@@ -28,15 +28,6 @@ const HTMLInlineCSSWebpackPlugin =
     module: {
       rules: [
         { test: /\.html$/, loader: "underscore-template-loader" },
-        // {
-        //   test: /\.html$/i,
-        //   loader: "html-loader",
-        // },
-        // { test: /\.html$/, use: "raw-loader" },
-        // {
-        //   test: /\.css$/i,
-        //   use: ["style-loader", "css-loader"],
-        // },
         {
           test: /\.css$/,
           use: [MiniCssExtractPlugin.loader, "css-loader"],
