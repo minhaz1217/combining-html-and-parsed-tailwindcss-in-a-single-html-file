@@ -25,7 +25,7 @@ module.exports = (env) => {
         inject: true,
         translations: {
           ...translation,
-          language_file: process.env.npm_config_language_file || "german",
+          language_file: languageFile,
         },
       }),
       new HTMLInlineCSSWebpackPlugin(),
