@@ -9,8 +9,9 @@ module.exports = (env) => {
       "You can enter dynamic language files by using --language_file=<your_language_file_without_extension>(ie: de/it/fr)"
     );
   }
+  const translationFolder = "./src/translations";
   const languageFile = process.env.npm_config_language_file || "en";
-  const translation = require(`./translations/${languageFile}.json`);
+  const translation = require(`${translationFolder}/${languageFile}.json`);
   return {
     // mode: "production",
     mode: "development",
