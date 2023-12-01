@@ -4,6 +4,11 @@ const HTMLInlineCSSWebpackPlugin =
   require("html-inline-css-webpack-plugin").default;
 
 module.exports = (env) => {
+  if (!process.env.npm_config_language_file) {
+    console.log(
+      "You can enter dynamic language files by using --language_file=<your_language_file_without_extension>(ie: de/it/fr)"
+    );
+  }
   const languageFile = process.env.npm_config_language_file || "en";
   const translation = require(`./translations/${languageFile}.json`);
   return {
